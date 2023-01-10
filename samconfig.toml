@@ -1,0 +1,11 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "nv-sam-dynamodb"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-vh7p71sdejxf"
+s3_prefix = "nv-sam-dynamodb"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
