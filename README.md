@@ -15,6 +15,7 @@ SAM CLI commands:
 - sam logs
 - sam package
 - sam deploy
+- sam validate
 
 Details about these commands can be found [here](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-reference.html#serverless-sam-cli)
 
