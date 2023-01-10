@@ -18,6 +18,18 @@ SAM CLI commands:
 
 Details about these commands can be found [here](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-reference.html#serverless-sam-cli)
 
+## Commands that can be used in this Project
+
+#### Commands to be run in Root folder
+
+- `sam build`: To build the Project
+- `sam local start-api`: To run the project on local
+- `sam deploy --guided`: To deploy the project to AWS
+
+#### Commands to be run in `src` folder
+
+- `npm run lint`: Run and fix the lint issues in the code.
+
 ## File/Folder Info
 
 1.  `root`: Contains the SAM application
