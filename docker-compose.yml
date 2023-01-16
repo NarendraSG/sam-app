@@ -1,0 +1,33 @@
+version: '3'
+services:
+  elasticsearch:
+    container_name: elasticsearch
+    networks:
+      - sam-net
+    image: elasticsearch:8.6.0
+    environment:
+      - discovery.type=single-node
+      - ELASTIC_USERNAME=elastic
+      - ELASTIC_PASSWORD=elastic
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - ./es-data:/usr/share/elasticsearch/data
+  dynamodb:
+    image:  amazon/dynamodb-local
+    container_name: dynamodb
+    hostname: dynamodb
+    restart: always
+    volumes:
+      -  ./dynamodb-data:/home/dynamodblocal/data
+    ports:
+      - 8000:8000
+    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath /home/dynamodblocal/data/"
+
+# volumes:
+#   elasticsearch-data:
+#     driver: local
+networks:
+  sam-net:
+

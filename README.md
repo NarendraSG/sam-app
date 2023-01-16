@@ -19,12 +19,40 @@ SAM CLI commands:
 
 Details about these commands can be found [here](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-reference.html#serverless-sam-cli)
 
-## Commands that can be used in this Project
+### Local development
+
+Currently, this is built in such a way that, API related to elasticsearch can be tested on local only and dynamoDB can only be tested on AWS.
+
+To setup on local, `docker-compose up -d`
+
+### APIs created
+
+#### ElasticSearch
+
+- **GET** Path: `/elastic/health`
+
+#### DynamoDB
+
+- **POST** Path: `/user`
+
+Body:
+`   {
+      "userData":{
+        "id": 1002,
+        "age": 129
+      },
+      "taskData":{
+        "id": 1002,
+        "desc": "This is first task"
+      }
+    }`
+
+- **GET** Path: `/user`
 
 #### Commands to be run in Root folder
 
 - `sam build`: To build the Project
-- `sam local start-api`: To run the project on local
+- `sam local start-api --docker-network sam_dynamodb_sam-net`: To run the project on local
 - `sam deploy --guided`: To deploy the project to AWS
 
 #### Commands to be run in `src` folder
